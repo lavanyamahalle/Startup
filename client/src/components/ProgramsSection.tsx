@@ -39,9 +39,8 @@ export default function ProgramsSection() {
     <section id="programs" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Programs Offered</h2>
-          <div className="w-20 h-1 bg-[#D2B48C] mx-auto mb-8"></div>
-          <p className="text-lg max-w-3xl mx-auto">Our specialized programs focus on nourishment rather than calorie-cutting, integrating diet, fitness, and lifestyle changes.</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4 inline-block section-title after:left-1/4 after:right-1/4 after:w-1/2">Programs Offered</h2>
+          <p className="text-lg max-w-3xl mx-auto mt-8">Our specialized programs focus on nourishment rather than calorie-cutting, integrating diet, fitness, and lifestyle changes for sustainable results.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -56,10 +55,8 @@ export default function ProgramsSection() {
         </div>
         
         <div className="text-center mt-12">
-          <Link href="/programs">
-            <a className="inline-block bg-primary hover:bg-primary/90 text-white font-cta font-semibold py-3 px-6 rounded-lg shadow transition">
-              View All Programs
-            </a>
+          <Link href="/programs" className="inline-block bg-primary hover:bg-primary/90 text-white font-cta font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 no-hover-effect">
+            View All Programs
           </Link>
         </div>
       </div>
