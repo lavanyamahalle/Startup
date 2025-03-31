@@ -83,7 +83,8 @@ export default function WhatsAppButton() {
   }, [isVisible, bounce]);
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/7264072630', '_blank');
+    // The WhatsApp number is from the user requirements
+    window.open('https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20your%20services.', '_blank');
   };
 
   // Add the animation styles to the document
