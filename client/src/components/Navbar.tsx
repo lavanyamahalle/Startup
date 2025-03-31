@@ -1,22 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { useAuth } from "@/hooks/use-auth";
 import Logo from "@/components/ui/logo";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { MenuIcon, UserCircle, User } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
-  const { user, logoutMutation } = useAuth();
   
   // Close mobile menu when location changes
   useEffect(() => {
@@ -56,76 +45,10 @@ export default function Navbar() {
             <Link href="/gallery" className={`${location === "/gallery" ? "text-primary" : "text-gray-800"} font-medium hover:text-primary transition`}>
               Gallery
             </Link>
-            
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <UserCircle className="h-5 w-5" />
-                    <span className="max-w-[120px] truncate">{user.fullName}</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  {user.isAdmin && (
-                    <DropdownMenuItem asChild>
-                      <Link href="/admin">Admin Dashboard</Link>
-                    </DropdownMenuItem>
-                  )}
-                  <DropdownMenuItem asChild>
-                    <Link href="/profile">Profile</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => logoutMutation.mutate()}>
-                    Logout
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Link href="/auth">
-                <Button className="bg-primary hover:bg-primary/90">
-                  <User className="h-4 w-4 mr-2" />
-                  Login / Register
-                </Button>
-              </Link>
-            )}
           </nav>
           
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:hidden">
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <UserCircle className="h-5 w-5" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>{user.fullName}</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  {user.isAdmin && (
-                    <DropdownMenuItem asChild>
-                      <Link href="/admin">Admin Dashboard</Link>
-                    </DropdownMenuItem>
-                  )}
-                  <DropdownMenuItem asChild>
-                    <Link href="/profile">Profile</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => logoutMutation.mutate()}>
-                    Logout
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Link href="/auth">
-                <Button className="bg-primary hover:bg-primary/90" size="sm">
-                  Login
-                </Button>
-              </Link>
-            )}
-            
+          <div className="flex items-center md:hidden">
             <button 
               className="text-primary focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

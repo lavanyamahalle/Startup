@@ -27,15 +27,11 @@ export default function HeroSection() {
               "Transforming health and managing weight naturally through the power of food as medicine."
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact">
-                <a className="bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white font-cta font-semibold py-3 px-6 rounded-lg shadow transition">
-                  Contact Us
-                </a>
+              <Link href="/contact" className="bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white font-cta font-semibold py-3 px-6 rounded-lg shadow transition">
+                Contact Us
               </Link>
-              <Link href="/programs">
-                <a className="bg-white hover:bg-gray-50 text-primary border-2 border-primary font-cta font-semibold py-3 px-6 rounded-lg shadow transition">
-                  Our Programs
-                </a>
+              <Link href="/programs" className="bg-white hover:bg-gray-50 text-primary border-2 border-primary font-cta font-semibold py-3 px-6 rounded-lg shadow transition">
+                Our Programs
               </Link>
             </div>
           </div>

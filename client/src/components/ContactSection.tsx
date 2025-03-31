@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest, queryClient } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { insertContactMessageSchema } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -26,17 +23,19 @@ import {
 } from "@/components/ui/select";
 import { Loader2 } from "lucide-react";
 
-// Extend the schema to add validation rules
-const contactFormSchema = insertContactMessageSchema.extend({
+// Define the contact form schema
+const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  program: z.string(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 export default function ContactSection() {
   const { toast } = useToast();
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -44,36 +43,30 @@ export default function ContactSection() {
       name: "",
       email: "",
       phone: "",
-      program: "",
+      program: "none", // Set to match the default SelectItem value
       message: "",
     },
   });
 
-  const submitContactMutation = useMutation({
-    mutationFn: async (values: z.infer<typeof contactFormSchema>) => {
-      const res = await apiRequest("POST", "/api/contact", values);
-      return await res.json();
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/contact"] });
+  const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
+    setIsSubmitting(true);
+    
+    // Simulate API call with setTimeout
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormSubmitted(true);
       toast({
         title: "Message Sent!",
         description: "Thank you for contacting us. We'll get back to you soon.",
       });
-      setFormSubmitted(true);
-      form.reset();
-    },
-    onError: (error: Error) => {
-      toast({
-        title: "Message Failed",
-        description: error.message,
-        variant: "destructive",
+      form.reset({
+        name: "",
+        email: "",
+        phone: "",
+        program: "none",
+        message: "",
       });
-    },
-  });
-
-  const onSubmit = (values: z.infer<typeof contactFormSchema>) => {
-    submitContactMutation.mutate(values);
+    }, 1000);
   };
 
   return (
@@ -178,7 +171,7 @@ export default function ContactSection() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="">Select a Program</SelectItem>
+                            <SelectItem value="none">Select a Program</SelectItem>
                             <SelectItem value="weight-loss">Weight Loss</SelectItem>
                             <SelectItem value="weight-gain">Weight Gain</SelectItem>
                             <SelectItem value="therapeutic">Therapeutic Diet</SelectItem>
@@ -214,9 +207,9 @@ export default function ContactSection() {
                   <Button 
                     type="submit" 
                     className="w-full bg-primary hover:bg-primary/90 text-white font-cta font-semibold shadow transition"
-                    disabled={submitContactMutation.isPending}
+                    disabled={isSubmitting}
                   >
-                    {submitContactMutation.isPending ? (
+                    {isSubmitting ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         Sending...
