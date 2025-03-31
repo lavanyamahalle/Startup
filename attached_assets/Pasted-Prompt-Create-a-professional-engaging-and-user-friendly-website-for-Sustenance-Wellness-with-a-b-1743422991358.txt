@@ -1,0 +1,70 @@
+Prompt:
+
+Create a professional, engaging, and user-friendly website for Sustenance Wellness with a brown and white background theme. The website should feature the Sustenance Wellness logo prominently. The homepage should include a navigation bar with the following sections:
+	•	Home
+	•	About Dt. Sakshi
+	•	Programs
+	•	How to Join
+	•	Success Stories
+	•	Blog
+	•	Contact Us
+	•	Gallery
+
+Homepage Content:
+	•	Header:
+	•	Dt. Sakshi Mahalle – MSc in Nutritional Studies and Dietetics
+	•	Titles: Clinical Nutritionist | Gut Health Expert | Diabetes Educator | Lifestyle Coach | Zumba and Yoga Instructor | Dietary Supplements Advisor
+	•	Impact Statement: Has helped 5000+ people sustain wellness and transform their lives.
+	•	Tagline: Transforming health and managing weight naturally through the power of food as medicine.
+	•	Call-to-Action Buttons:
+	•	“Contact Us”
+	•	“Our Programs”
+	•	WhatsApp chat icon
+
+About Section:
+	•	About Sustenance Wellness: A brief introduction to how it helps individuals overcome health challenges and adopt a sustainable healthy lifestyle.
+	•	Contact Information:
+	•	Phone: 7264072630
+	•	Email: dt.sakshimahalle@gmail.com
+	•	Address: AP Pinnacle, Lonikand, Pune
+	•	Social Media Icons (Facebook, Instagram, LinkedIn)
+
+Why Choose Sustenance Wellness?
+	•	Personalization in diet and nutrition plans
+	•	5000+ satisfied clients worldwide
+	•	Holistic approach integrating diet and fitness
+	•	Expert guidance from Dt. Sakshi Mahalle
+
+Testimonials Section:
+	•	Client success stories, categorized into Weight Loss, Weight Gain, Therapeutic Diets, and Diabetes Management, with real testimonials.
+
+Programs Offered:
+	•	Diet & Lifestyle Program (no calorie-cutting, focus on nourishment and fitness)
+	•	Specialized Diet Plans for:
+	•	Weight Loss/Obesity Management
+	•	Weight Gain
+	•	Pregnancy & Post-Pregnancy Diets
+	•	Therapeutic Diets (Diabetes, Thyroid, IBS, PCOS)
+	•	Skin & Hair Care
+	•	Child Nutrition
+	•	Fitness & Gym Diets
+
+Plans & Pricing:
+	•	1 Month Plan – ₹2000
+	•	3 Months Plan – ₹4499
+	•	6 Months Plan – ₹5999
+	•	1 Year Plan – ₹9999
+
+Features:
+	•	Personalized diet plans
+	•	Weekly check-ins via audio/video
+	•	Zumba & Yoga sessions (5 days a week)
+	•	Daily progress tracking
+	•	Priority support via WhatsApp, email, and text
+
+Call to Action:
+	•	“Start Your Transformation Today!”
+	•	“Book a Free Consultation”
+	•	“Join Our Community of 5000+ Happy Clients!”
+
+The website should be clean, professional, and easy to navigate, with a visually appealing layout that highlights Dt. Sakshi’s expertise and success stories while encouraging visitors to join a program.
