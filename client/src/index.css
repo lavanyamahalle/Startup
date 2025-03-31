@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  --font-cta: 'Montserrat', sans-serif;
+  --color-primary: 30 52% 35%;
+  --color-secondary: 34 41% 70%;
+  --color-accent: 122 61% 49%;
+  --color-light: 33 82% 96%;
+  --color-dark: 0 0% 20%;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[hsl(var(--color-accent))] hover:bg-[hsl(var(--color-accent)_/_0.9)] text-white font-semibold py-3 px-6 rounded-lg transition-colors font-cta;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-[hsl(var(--color-primary))] border-2 border-[hsl(var(--color-primary))] font-semibold py-3 px-6 rounded-lg transition-colors font-cta;
+  }
+
+  .font-cta {
+    font-family: var(--font-cta);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .bg-primary-gradient {
+    @apply bg-gradient-to-b from-[hsl(var(--color-secondary)_/_0.2)] to-white;
+  }
+  
+  .testimonial-tab.active {
+    @apply bg-[hsl(var(--color-primary))] text-white;
+  }
+  
+  .testimonial-tab:not(.active) {
+    @apply bg-white border border-[hsl(var(--color-primary))] text-[hsl(var(--color-primary))];
+  }
+}
