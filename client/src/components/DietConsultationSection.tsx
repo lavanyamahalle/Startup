@@ -69,10 +69,10 @@ export default function DietConsultationSection() {
               </div>
             </div>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 
                 onClick={handleGeneralConsult}
-                className="inline-flex items-center bg-[#D2B48C] hover:bg-[#C0A080] text-black font-medium py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="inline-flex items-center justify-center bg-[#D2B48C] hover:bg-[#C0A080] text-black font-medium py-3 px-6 sm:px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base w-full sm:w-auto"
               >
                 <i className="fas fa-utensils mr-2"></i>
                 Diet Plans
@@ -80,7 +80,7 @@ export default function DietConsultationSection() {
               
               <button 
                 onClick={handleGeneralConsult}
-                className="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-medium py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-green-600 font-medium py-3 px-6 sm:px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base w-full sm:w-auto"
               >
                 <i className="fab fa-whatsapp mr-2 text-lg"></i>
                 Consult Now
@@ -93,7 +93,7 @@ export default function DietConsultationSection() {
             <div className="absolute -right-10 -top-10 w-28 h-28 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1hcHBsZSI+PHBhdGggZD0iTTEyIDJhMyAzIDAgMCAwLTMgM3YxYTMgMyAwIDAgMCAzIDMgMyAzIDAgMCAwIDMtM1Y1YTMgMyAwIDAgMC0zLTN6Ij48L3BhdGg+PHBhdGggZD0iTTE5IDEwdjJhNyA3IDAgMCAxLTcgNyA3IDcgMCAwIDEtNy03di0yYTMgMyAwIDAgMSAzLTNoOGEzIDMgMCAwIDEgMyAzeiI+PC9wYXRoPjwvc3ZnPg==')] bg-no-repeat opacity-25 animate-float"></div>
             
             <div className="relative">
-              <div className="w-full h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-2xl border border-white/20">
+              <div className="w-full h-[350px] sm:h-[400px] md:h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-2xl border border-white/20">
                 <div className="absolute inset-0 flex items-center justify-center flex-col space-y-6">
                   <div className="relative w-32 h-32">
                     <div className="absolute inset-0 rounded-full bg-[#D2B48C]/50 animate-pulse-slow"></div>

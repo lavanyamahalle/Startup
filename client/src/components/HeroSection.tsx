@@ -193,7 +193,7 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <div ref={statsRef} className="grid grid-cols-3 gap-4 mb-8">
+            <div ref={statsRef} className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
               {[
                 { count: 5000, text: "Happy Clients", icon: "fa-smile" },
                 { count: 8, text: "Years Experience", icon: "fa-calendar-alt" },
@@ -201,7 +201,7 @@ export default function HeroSection() {
               ].map((stat, index) => (
                 <div 
                   key={index} 
-                  className={`bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 
+                  className={`bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-xl shadow-lg border border-gray-100 
                   transition-all duration-500 transform 
                   opacity-0 ${isVisible ? 'opacity-100' : ''}
                   hover:-translate-y-1 hover:shadow-xl`}
@@ -210,10 +210,10 @@ export default function HeroSection() {
                   <div className="flex items-center justify-center text-primary mb-2">
                     <i className={`fas ${stat.icon} text-xl`}></i>
                   </div>
-                  <p className="text-primary font-bold text-2xl text-center count-up">
+                  <p className="text-primary font-bold text-xl sm:text-2xl text-center count-up">
                     {countersStarted ? `${stat.count}+` : '0+'}
                   </p>
-                  <p className="text-gray-600 text-center text-sm">{stat.text}</p>
+                  <p className="text-gray-600 text-center text-xs sm:text-sm">{stat.text}</p>
                 </div>
               ))}
             </div>
@@ -227,7 +227,7 @@ export default function HeroSection() {
               </span>
             </p>
             
-            <div className={`flex flex-wrap gap-4 
+            <div className={`flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 
               transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: '900ms' }}
             >
@@ -235,7 +235,7 @@ export default function HeroSection() {
                 href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20a%20personalized%20diet%20consultation.%20Can%20you%20help%20me%20with%20that%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center"
+                className="bg-primary text-white px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center justify-center"
               >
                 <i className="fas fa-utensils mr-2"></i>
                 Diet Consultation
@@ -245,7 +245,7 @@ export default function HeroSection() {
                 href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20joining%20your%20Zumba%20classes.%20Could%20you%20provide%20more%20details%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-primary border-2 border-primary px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center"
+                className="bg-white text-primary border-2 border-primary px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center justify-center"
               >
                 <i className="fas fa-music mr-2"></i>
                 Zumba Classes
@@ -255,7 +255,7 @@ export default function HeroSection() {
                 href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27d%20like%20to%20know%20more%20about%20your%20services%20and%20pricing.%20Can%20you%20help%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-green-600 flex items-center"
+                className="bg-green-500 text-white px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-green-600 flex items-center justify-center"
               >
                 <i className="fab fa-whatsapp mr-2"></i>
                 Ask on WhatsApp
@@ -299,7 +299,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 backdrop-blur-sm z-1"></div>
                 
                 {/* Image Placeholder - Replace with actual image when available */}
-                <div className="relative h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
+                <div className="relative h-[350px] sm:h-[400px] md:h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
                   <div className="text-center p-8">
                     <div className="h-24 w-24 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                       <i className="fas fa-user-md text-primary text-4xl"></i>
