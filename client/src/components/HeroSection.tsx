@@ -1,75 +1,308 @@
 import { Link } from "wouter";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [countersStarted, setCountersStarted] = useState(false);
+  
+  // Define hero animation styles
+  const heroAnimation = `
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 1; }
+      50% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(0.95); opacity: 1; }
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink {
+      from { border-right-color: transparent; }
+      to { border-right-color: #8B4513; }
+    }
+    
+    .text-gradient {
+      background: linear-gradient(90deg, #8B4513, #D2B48C, #8B4513);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: gradientShift 3s linear infinite;
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating-delay-1 {
+      animation: float 6s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    
+    .floating-delay-2 {
+      animation: float 6s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+    
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #8B4513;
+      animation: 
+        typewriter 3.5s steps(40, end) 1s 1 normal both,
+        blink 0.75s step-end infinite;
+    }
+    
+    .hero-bg-pattern {
+      background-image: 
+        radial-gradient(circle at 25px 25px, rgba(139, 69, 19, 0.1) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(210, 180, 140, 0.1) 2%, transparent 0%);
+      background-size: 100px 100px;
+    }
+    
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(30deg);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
+    }
+    
+    .count-up {
+      transition: all 2s ease;
+    }
+  `;
   
   useEffect(() => {
-    // Trigger animation after component mounts
-    setIsVisible(true);
-  }, []);
+    // Add the animation styles
+    const styleElement = document.createElement('style');
+    styleElement.innerHTML = heroAnimation;
+    document.head.appendChild(styleElement);
+    
+    // Trigger visibility animation after component mounts
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    
+    // Observer for stats counter animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !countersStarted) {
+            setCountersStarted(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+    
+    return () => {
+      document.head.removeChild(styleElement);
+      clearTimeout(timer);
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, [countersStarted]);
 
   return (
-    <section id="home" className="animated-gradient">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div 
-            className={`md:w-1/2 mb-10 md:mb-0 transition-all duration-700 transform ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-            }`}
-          >
-            <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary mb-4 leading-tight">
-              Transform Your Health <span className="text-[#4CAF50]">Naturally</span>
-            </h1>
-            <h2 className="text-xl md:text-2xl mb-6">
-              <span className="font-bold">Dt. Sakshi Mahalle</span> – MSc in Nutritional Studies and Dietetics
-            </h2>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {["Clinical Nutritionist", "Gut Health Expert", "Diabetes Educator", "Lifestyle Coach", "Zumba & Yoga Instructor", "Dietary Supplements Advisor"]
-                .map((tag, index) => (
-                  <span 
-                    key={index}
-                    className={`bg-[#D2B48C]/30 text-primary px-3 py-1 rounded-full text-sm transition-all duration-500 transform hover:scale-105 hover:shadow-md hover:bg-primary hover:text-white`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    {tag}
-                  </span>
-                ))
-              }
+    <section id="home" className="pt-28 md:pt-36 pb-16 hero-bg-pattern relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-b from-[#D2B48C]/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          {/* Left Content */}
+          <div className={`lg:w-1/2 mb-10 lg:mb-0 transition-all duration-1000 transform ${
+            isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
+          }`}>
+            <div className="inline-block mb-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+              Welcome to Sustenance Wellness
             </div>
-            <p className="text-lg mb-8">
-              Has helped <span className="font-bold text-primary relative">
-                <span className="relative z-10">5000+ people</span>
-                <span className="absolute -bottom-1 left-0 w-full h-2 bg-[#D2B48C]/50 z-0"></span>
-              </span> sustain wellness and transform their lives.
+            
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Transform Your Health{" "}
+              <span className="text-gradient font-bold">Naturally</span>
+            </h1>
+            
+            <div className="flex items-center mb-8">
+              <div className="h-1 w-20 bg-primary rounded-full mr-4"></div>
+              <h2 className="typewriter text-xl md:text-2xl text-gray-700 overflow-hidden whitespace-nowrap">
+                <span className="font-medium">Dt. Sakshi Mahalle</span> — Nutritionist & Fitness Expert
+              </h2>
+            </div>
+            
+            <div className="flex flex-wrap gap-2 mb-8">
+              {[
+                { text: "Clinical Nutritionist", icon: "fa-heartbeat" },
+                { text: "Gut Health Expert", icon: "fa-seedling" },
+                { text: "Diabetes Educator", icon: "fa-hospital" }, 
+                { text: "Lifestyle Coach", icon: "fa-leaf" },
+                { text: "Zumba Instructor", icon: "fa-music" },
+                { text: "Diet Planner", icon: "fa-utensils" }
+              ].map((tag, index) => (
+                <span 
+                  key={index}
+                  className={`bg-white shadow-md text-primary px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform 
+                    opacity-0 ${isVisible ? 'opacity-100' : ''}
+                    hover:scale-105 hover:shadow-lg hover:bg-primary hover:text-white flex items-center`}
+                  style={{ transitionDelay: `${index * 100 + 300}ms` }}
+                >
+                  <i className={`fas ${tag.icon} mr-2`}></i>
+                  {tag.text}
+                </span>
+              ))}
+            </div>
+            
+            <div ref={statsRef} className="grid grid-cols-3 gap-4 mb-8">
+              {[
+                { count: 5000, text: "Happy Clients", icon: "fa-smile" },
+                { count: 8, text: "Years Experience", icon: "fa-calendar-alt" },
+                { count: 50, text: "Special Programs", icon: "fa-clipboard-check" }
+              ].map((stat, index) => (
+                <div 
+                  key={index} 
+                  className={`bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 
+                  transition-all duration-500 transform 
+                  opacity-0 ${isVisible ? 'opacity-100' : ''}
+                  hover:-translate-y-1 hover:shadow-xl`}
+                  style={{ transitionDelay: `${index * 200 + 600}ms` }}
+                >
+                  <div className="flex items-center justify-center text-primary mb-2">
+                    <i className={`fas ${stat.icon} text-xl`}></i>
+                  </div>
+                  <p className="text-primary font-bold text-2xl text-center count-up">
+                    {countersStarted ? `${stat.count}+` : '0+'}
+                  </p>
+                  <p className="text-gray-600 text-center text-sm">{stat.text}</p>
+                </div>
+              ))}
+            </div>
+            
+            <p className={`text-lg mb-8 border-l-4 border-primary pl-4 py-2 bg-primary/5 rounded-r-lg
+              transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: '800ms' }}
+            >
+              <span className="italic">
+                "Transforming health and managing weight naturally through the power of food as medicine and joyful movement."
+              </span>
             </p>
-            <p className="text-lg italic mb-8 border-l-4 border-[#D2B48C] pl-4 py-2">
-              "Transforming health and managing weight naturally through the power of food as medicine."
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary no-hover-effect">
+            
+            <div className={`flex flex-wrap gap-4 
+              transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ transitionDelay: '900ms' }}
+            >
+              <Link href="/contact" className="bg-primary text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center">
+                <i className="fas fa-paper-plane mr-2"></i>
                 Contact Us
               </Link>
-              <Link href="/programs" className="btn-secondary no-hover-effect">
+              <Link href="/programs" className="bg-white text-primary border-2 border-primary px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center">
+                <i className="fas fa-th-list mr-2"></i>
                 Our Programs
               </Link>
+              <a 
+                href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20your%20services." 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-green-600 flex items-center"
+              >
+                <i className="fab fa-whatsapp mr-2"></i>
+                WhatsApp
+              </a>
             </div>
           </div>
-          <div 
-            className={`md:w-5/12 transition-all duration-700 transform ${
-              isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-            }`}
-            style={{ transitionDelay: "200ms" }}
-          >
+          
+          {/* Right Content - Image */}
+          <div className={`lg:w-5/12 transition-all duration-1000 transform ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
+          }`} style={{ transitionDelay: "400ms" }}>
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#D2B48C]/40 rounded-full z-0 animate-pulse"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full z-0 animate-pulse" style={{ animationDelay: "1s" }}></div>
-              <div className="fancy-image-frame relative z-10 bg-gray-200 overflow-hidden h-96 w-full shadow-2xl">
-                <div className="h-full w-full flex items-center justify-center">
-                  <span className="text-gray-500">
-                    <i className="fas fa-user-md text-6xl"></i>
-                    <p className="text-center mt-4">Dietitian's Professional Photo</p>
-                  </span>
+              {/* Decorative Elements */}
+              <div className="absolute -top-12 -left-12 w-36 h-36 bg-[#D2B48C]/30 rounded-full blur-xl floating-delay-1 z-0"></div>
+              <div className="absolute -bottom-10 -right-10 w-28 h-28 bg-primary/20 rounded-full blur-lg floating-delay-2 z-0"></div>
+              
+              <div className="absolute -top-6 left-0 transform -translate-x-1/2 bg-primary text-white px-4 py-2 rounded-lg shadow-lg z-20 floating">
+                <div className="flex items-center">
+                  <i className="fas fa-certificate mr-2"></i>
+                  <span>Certified Nutritionist</span>
+                </div>
+              </div>
+              
+              <div className="absolute top-1/4 -right-4 transform translate-x-1/2 bg-white text-primary px-4 py-2 rounded-lg shadow-lg z-20 floating-delay-1">
+                <div className="flex items-center">
+                  <i className="fas fa-star mr-2"></i>
+                  <span>5-star rated</span>
+                </div>
+              </div>
+              
+              <div className="absolute -bottom-6 left-1/4 transform -translate-x-1/2 bg-[#D2B48C] text-white px-4 py-2 rounded-lg shadow-lg z-20 floating-delay-2">
+                <div className="flex items-center">
+                  <i className="fas fa-medal mr-2"></i>
+                  <span>Premium Service</span>
+                </div>
+              </div>
+              
+              {/* Main Image Frame */}
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#D2B48C]/20 z-0"></div>
+                <div className="absolute inset-0 backdrop-blur-sm z-1"></div>
+                
+                {/* Image Placeholder - Replace with actual image when available */}
+                <div className="relative h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
+                  <div className="text-center p-8">
+                    <div className="h-24 w-24 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                      <i className="fas fa-user-md text-primary text-4xl"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary mb-2">Dt. Sakshi Mahalle</h3>
+                    <p className="text-gray-600 mb-4">MSc in Nutritional Studies and Dietetics</p>
+                    <div className="flex justify-center space-x-2">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                        Weight Management
+                      </span>
+                      <span className="bg-[#D2B48C]/20 text-[#8B4513] px-3 py-1 rounded-full text-sm">
+                        Clinical Nutrition
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
