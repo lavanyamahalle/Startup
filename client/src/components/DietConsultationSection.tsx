@@ -1,6 +1,25 @@
-import { Link } from "wouter";
-
 export default function DietConsultationSection() {
+  // WhatsApp message functions
+  const handleGeneralConsult = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'd like to schedule a personalized diet consultation. Can you help me with this?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
+  const handleWeightManagement = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'm interested in your Weight Management program. Can you provide more details?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
+  const handleMedicalNutrition = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'm interested in your Medical Nutrition plan. Can you provide more details?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
+  const handleSportsNutrition = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'm interested in your Sports Nutrition plan. Can you provide more details?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
   return (
     <section id="diet-consultation" className="relative py-20 overflow-hidden">
       {/* Decorative elements */}
@@ -51,19 +70,21 @@ export default function DietConsultationSection() {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Link href="/pricing" className="inline-block bg-[#D2B48C] hover:bg-[#C0A080] text-black font-cta font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 no-hover-effect">
-                View Diet Plans
-              </Link>
+              <button 
+                onClick={handleGeneralConsult}
+                className="inline-flex items-center bg-[#D2B48C] hover:bg-[#C0A080] text-black font-medium py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <i className="fas fa-utensils mr-2"></i>
+                Diet Plans
+              </button>
               
-              <a 
-                href="https://wa.me/7264072630" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-cta font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 no-hover-effect"
+              <button 
+                onClick={handleGeneralConsult}
+                className="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-medium py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <i className="fab fa-whatsapp mr-2 text-lg"></i>
                 Consult Now
-              </a>
+              </button>
             </div>
           </div>
           
@@ -86,6 +107,14 @@ export default function DietConsultationSection() {
                     <p className="text-white font-bold text-xl">Book Your Consultation</p>
                     <p className="text-gray-200">First step to a healthier you</p>
                   </div>
+                  
+                  <button 
+                    onClick={handleGeneralConsult}
+                    className="mt-4 bg-white hover:bg-gray-100 text-primary font-medium py-2 px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center"
+                  >
+                    <i className="fab fa-whatsapp mr-2 text-green-600"></i>
+                    <span>Book Now</span>
+                  </button>
                 </div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
@@ -107,29 +136,50 @@ export default function DietConsultationSection() {
         
         {/* Program highlights */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20">
+          <button 
+            onClick={handleWeightManagement}
+            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+          >
             <div className="w-12 h-12 bg-[#D2B48C]/20 rounded-full flex items-center justify-center mb-4">
               <i className="fas fa-weight text-[#D2B48C]"></i>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Weight Management</h3>
             <p className="text-gray-100">Scientifically-backed programs for weight loss, gain, or maintenance based on your body type.</p>
-          </div>
+            <div className="mt-4 inline-flex items-center text-[#D2B48C]">
+              <span className="text-sm">Contact on WhatsApp</span>
+              <i className="fab fa-whatsapp ml-2"></i>
+            </div>
+          </button>
           
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20">
+          <button 
+            onClick={handleMedicalNutrition}
+            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+          >
             <div className="w-12 h-12 bg-[#D2B48C]/20 rounded-full flex items-center justify-center mb-4">
               <i className="fas fa-heartbeat text-[#D2B48C]"></i>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Medical Nutrition</h3>
             <p className="text-gray-100">Specialized therapeutic diets for managing diabetes, thyroid disorders, PCOS, and other health conditions.</p>
-          </div>
+            <div className="mt-4 inline-flex items-center text-[#D2B48C]">
+              <span className="text-sm">Contact on WhatsApp</span>
+              <i className="fab fa-whatsapp ml-2"></i>
+            </div>
+          </button>
           
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20">
+          <button 
+            onClick={handleSportsNutrition}
+            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+          >
             <div className="w-12 h-12 bg-[#D2B48C]/20 rounded-full flex items-center justify-center mb-4">
               <i className="fas fa-dumbbell text-[#D2B48C]"></i>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Sports Nutrition</h3>
             <p className="text-gray-100">Performance-enhancing nutrition plans for athletes and fitness enthusiasts to maximize results.</p>
-          </div>
+            <div className="mt-4 inline-flex items-center text-[#D2B48C]">
+              <span className="text-sm">Contact on WhatsApp</span>
+              <i className="fab fa-whatsapp ml-2"></i>
+            </div>
+          </button>
         </div>
       </div>
     </section>

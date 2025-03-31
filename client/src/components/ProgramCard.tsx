@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { useState } from "react";
 
 interface ProgramCardProps {
@@ -10,9 +9,15 @@ interface ProgramCardProps {
 export default function ProgramCard({ title, icon, description }: ProgramCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   
+  const handleWhatsAppClick = () => {
+    // Create a WhatsApp message specific to this program
+    const encodedMessage = encodeURIComponent(`Hi Sustenance Wellness! I'm interested in your ${title} program. Can you provide more details?`);
+    window.open(`https://wa.me/7264072630?text=${encodedMessage}`, '_blank');
+  };
+  
   return (
     <div 
-      className="bg-[#F9F5F0] rounded-lg overflow-hidden shadow-md hover-card"
+      className="bg-white rounded-xl overflow-hidden shadow-md hover-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -33,13 +38,24 @@ export default function ProgramCard({ title, icon, description }: ProgramCardPro
       <div className="p-6">
         <h3 className="text-xl font-bold text-primary mb-3 section-title">{title}</h3>
         <p className="mb-4 text-gray-700">{description}</p>
-        <Link 
-          href="/pricing" 
-          className="text-[#4CAF50] font-semibold flex items-center group no-hover-effect"
-        >
-          <span>Learn More</span> 
-          <i className={`fas fa-arrow-right transition-all duration-500 ml-2 group-hover:ml-3`}></i>
-        </Link>
+        
+        <div className="flex items-center justify-between mt-5">
+          <button 
+            onClick={handleWhatsAppClick}
+            className="btn-primary no-hover-effect py-2 px-4 text-sm"
+          >
+            <i className="fab fa-whatsapp mr-2"></i>
+            <span>Inquire Now</span>
+          </button>
+          
+          <div 
+            className="text-primary font-medium flex items-center group cursor-pointer"
+            onClick={handleWhatsAppClick}
+          >
+            <span>Learn More</span> 
+            <i className={`fas fa-arrow-right transition-all duration-500 ml-2 group-hover:ml-3`}></i>
+          </div>
+        </div>
       </div>
     </div>
   );

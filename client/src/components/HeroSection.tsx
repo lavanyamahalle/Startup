@@ -231,22 +231,34 @@ export default function HeroSection() {
               transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: '900ms' }}
             >
-              <Link href="/contact" className="bg-primary text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center">
-                <i className="fas fa-paper-plane mr-2"></i>
-                Contact Us
-              </Link>
-              <Link href="/programs" className="bg-white text-primary border-2 border-primary px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center">
-                <i className="fas fa-th-list mr-2"></i>
-                Our Programs
-              </Link>
               <a 
-                href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20your%20services." 
+                href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20a%20personalized%20diet%20consultation.%20Can%20you%20help%20me%20with%20that%3F" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center"
+              >
+                <i className="fas fa-utensils mr-2"></i>
+                Diet Consultation
+              </a>
+              
+              <a 
+                href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20joining%20your%20Zumba%20classes.%20Could%20you%20provide%20more%20details%3F" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-primary border-2 border-primary px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center"
+              >
+                <i className="fas fa-music mr-2"></i>
+                Zumba Classes
+              </a>
+              
+              <a 
+                href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27d%20like%20to%20know%20more%20about%20your%20services%20and%20pricing.%20Can%20you%20help%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-green-600 flex items-center"
               >
                 <i className="fab fa-whatsapp mr-2"></i>
-                WhatsApp
+                Ask on WhatsApp
               </a>
             </div>
           </div>

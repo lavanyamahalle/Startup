@@ -1,6 +1,25 @@
-import { Link } from "wouter";
-
 export default function ZumbaSection() {
+  // WhatsApp message functions
+  const handleZumbaClassInquiry = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'm interested in joining your Zumba classes. Could you provide schedule details and pricing?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
+  const handleEnergyBoostInquiry = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'm interested in your Zumba Energy Boost program. Can you tell me more about how it helps increase energy levels?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
+  const handleWeightManagementInquiry = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'd like to know more about how your Zumba classes can help with weight management. Can you provide some details?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
+  const handleStressReliefInquiry = () => {
+    const message = encodeURIComponent("Hi Sustenance Wellness! I'm interested in how your Zumba classes help with stress relief. Can you provide more information?");
+    window.open(`https://wa.me/7264072630?text=${message}`, '_blank');
+  };
+
   return (
     <section id="zumba" className="relative py-20 overflow-hidden">
       {/* Decorative elements */}
@@ -51,19 +70,21 @@ export default function ZumbaSection() {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-cta font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 no-hover-effect">
+              <button 
+                onClick={handleZumbaClassInquiry}
+                className="inline-flex items-center bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <i className="fas fa-music mr-2"></i>
                 Join a Class
-              </Link>
+              </button>
               
-              <a 
-                href="https://wa.me/7264072630" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-cta font-semibold py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 no-hover-effect"
+              <button 
+                onClick={handleZumbaClassInquiry}
+                className="inline-flex items-center bg-white hover:bg-gray-100 text-green-600 font-medium py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <i className="fab fa-whatsapp mr-2 text-lg"></i>
                 WhatsApp Inquiry
-              </a>
+              </button>
             </div>
           </div>
           
@@ -73,14 +94,22 @@ export default function ZumbaSection() {
             
             <div className="relative">
               <div className="w-full h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-2xl border border-white/20">
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-6">
                   <div className="relative w-24 h-24 bg-white/20 rounded-full animate-pulse flex items-center justify-center">
                     <i className="fas fa-play text-white text-2xl"></i>
                   </div>
+                  
+                  <button 
+                    onClick={handleZumbaClassInquiry}
+                    className="mt-4 bg-white hover:bg-gray-100 text-pink-500 font-medium py-2 px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center"
+                  >
+                    <i className="fab fa-whatsapp mr-2 text-green-600"></i>
+                    <span>Request Schedule</span>
+                  </button>
                 </div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                  <p className="text-white font-bold text-xl">Zumba Class Demo</p>
+                  <p className="text-white font-bold text-xl">Zumba Class</p>
                   <p className="text-gray-200">Feel the energy and join us!</p>
                 </div>
               </div>
@@ -98,29 +127,50 @@ export default function ZumbaSection() {
         
         {/* Class highlights */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20">
+          <button 
+            onClick={handleEnergyBoostInquiry}
+            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+          >
             <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
               <i className="fas fa-bolt text-yellow-400"></i>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Boost Energy</h3>
             <p className="text-gray-100">Elevate your mood and increase energy levels with our dynamic dance workouts.</p>
-          </div>
+            <div className="mt-4 inline-flex items-center text-yellow-400">
+              <span className="text-sm">Contact on WhatsApp</span>
+              <i className="fab fa-whatsapp ml-2"></i>
+            </div>
+          </button>
           
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20">
+          <button 
+            onClick={handleWeightManagementInquiry}
+            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+          >
             <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
               <i className="fas fa-weight text-yellow-400"></i>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Weight Management</h3>
             <p className="text-gray-100">Burn up to 600 calories per class while enjoying the vibrant atmosphere.</p>
-          </div>
+            <div className="mt-4 inline-flex items-center text-yellow-400">
+              <span className="text-sm">Contact on WhatsApp</span>
+              <i className="fab fa-whatsapp ml-2"></i>
+            </div>
+          </button>
           
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20">
+          <button 
+            onClick={handleStressReliefInquiry}
+            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+          >
             <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
               <i className="fas fa-smile-beam text-yellow-400"></i>
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Stress Relief</h3>
             <p className="text-gray-100">Relieve stress, improve coordination, and boost your confidence through dance.</p>
-          </div>
+            <div className="mt-4 inline-flex items-center text-yellow-400">
+              <span className="text-sm">Contact on WhatsApp</span>
+              <i className="fab fa-whatsapp ml-2"></i>
+            </div>
+          </button>
         </div>
       </div>
     </section>
