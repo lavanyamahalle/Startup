@@ -42,30 +42,30 @@ export default function ZumbaSection() {
               </span>
             </h2>
             
-            <p className="text-lg mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
               Experience the joy of fitness through dance! Our Zumba classes blend energetic music with fun, easy-to-follow movements that create a dynamic and effective workout.
             </p>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               <div className="flex items-center">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-400/30 flex items-center justify-center mr-4">
-                  <i className="fas fa-music text-yellow-400"></i>
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-yellow-400/30 flex items-center justify-center mr-3 sm:mr-4">
+                  <i className="fas fa-music text-yellow-400 text-sm sm:text-base"></i>
                 </div>
-                <p className="font-medium">High-energy Latin and international rhythms</p>
+                <p className="font-medium text-sm sm:text-base">High-energy Latin and international rhythms</p>
               </div>
               
               <div className="flex items-center">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-400/30 flex items-center justify-center mr-4">
-                  <i className="fas fa-heart text-yellow-400"></i>
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-yellow-400/30 flex items-center justify-center mr-3 sm:mr-4">
+                  <i className="fas fa-heart text-yellow-400 text-sm sm:text-base"></i>
                 </div>
-                <p className="font-medium">Burn calories while having fun</p>
+                <p className="font-medium text-sm sm:text-base">Burn calories while having fun</p>
               </div>
               
               <div className="flex items-center">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-400/30 flex items-center justify-center mr-4">
-                  <i className="fas fa-users text-yellow-400"></i>
+                <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-yellow-400/30 flex items-center justify-center mr-3 sm:mr-4">
+                  <i className="fas fa-users text-yellow-400 text-sm sm:text-base"></i>
                 </div>
-                <p className="font-medium">Suitable for all fitness levels</p>
+                <p className="font-medium text-sm sm:text-base">Suitable for all fitness levels</p>
               </div>
             </div>
             
@@ -88,86 +88,86 @@ export default function ZumbaSection() {
             </div>
           </div>
           
-          <div className="md:w-5/12 relative">
-            {/* Decorative dance silhouettes */}
-            <div className="absolute -left-16 -top-10 w-24 h-36 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci11c2VyIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCI+PC9jaXJjbGU+PC9zdmc+')] bg-no-repeat opacity-25 animate-bounce-slow"></div>
+          <div className="md:w-5/12 relative mt-8 md:mt-0">
+            {/* Decorative dance silhouettes - hidden on small mobile */}
+            <div className="hidden sm:block absolute -left-10 sm:-left-16 -top-10 w-16 sm:w-24 h-24 sm:h-36 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci11c2VyIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCI+PC9jaXJjbGU+PC9zdmc+')] bg-no-repeat opacity-25 animate-bounce-slow"></div>
             
             <div className="relative">
-              <div className="w-full h-[350px] sm:h-[400px] md:h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-2xl border border-white/20">
-                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-6">
-                  <div className="relative w-24 h-24 bg-white/20 rounded-full animate-pulse flex items-center justify-center">
-                    <i className="fas fa-play text-white text-2xl"></i>
+              <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/20">
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-4 sm:space-y-6">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 bg-white/20 rounded-full animate-pulse flex items-center justify-center">
+                    <i className="fas fa-play text-white text-xl sm:text-2xl"></i>
                   </div>
                   
                   <button 
                     onClick={handleZumbaClassInquiry}
-                    className="mt-4 bg-white hover:bg-gray-100 text-pink-500 font-medium py-2 px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center"
+                    className="mt-2 sm:mt-4 bg-white hover:bg-gray-100 text-pink-500 font-medium py-2 px-4 sm:px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center text-sm sm:text-base touch-target tap-highlight"
                   >
                     <i className="fab fa-whatsapp mr-2 text-green-600"></i>
                     <span>Request Schedule</span>
                   </button>
                 </div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                  <p className="text-white font-bold text-xl">Zumba Class</p>
-                  <p className="text-gray-200">Feel the energy and join us!</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent">
+                  <p className="text-white font-bold text-lg sm:text-xl">Zumba Class</p>
+                  <p className="text-gray-200 text-sm sm:text-base">Feel the energy and join us!</p>
                 </div>
               </div>
               
-              {/* Dancing figures decoration */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1tdXNpYyI+PHBhdGggZD0iTTkgMThWNWwxMi0ydjEzIj48L3BhdGg+PGNpcmNsZSBjeD0iNiIgY3k9IjE4IiByPSIzIj48L2NpcmNsZT48Y2lyY2xlIGN4PSIxOCIgY3k9IjE2IiByPSIzIj48L2NpcmNsZT48L3N2Zz4=')] bg-no-repeat opacity-40 animate-spin-slow"></div>
+              {/* Dancing figures decoration - hidden on small mobile */}
+              <div className="hidden sm:block absolute -bottom-8 sm:-bottom-10 -right-8 sm:-right-10 w-24 sm:w-32 h-24 sm:h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1tdXNpYyI+PHBhdGggZD0iTTkgMThWNWwxMi0ydjEzIj48L3BhdGg+PGNpcmNsZSBjeD0iNiIgY3k9IjE4IiByPSIzIj48L2NpcmNsZT48Y2lyY2xlIGN4PSIxOCIgY3k9IjE2IiByPSIzIj48L2NpcmNsZT48L3N2Zz4=')] bg-no-repeat opacity-40 animate-spin-slow"></div>
             </div>
             
-            {/* Class schedule badge */}
-            <div className="absolute -right-10 top-5 transform rotate-12 bg-yellow-400 text-black font-bold py-2 px-4 rounded-lg shadow-lg">
+            {/* Class schedule badge - responsive sizing */}
+            <div className="absolute -right-6 sm:-right-10 top-3 sm:top-5 transform rotate-12 bg-yellow-400 text-black font-bold py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg shadow-lg text-xs sm:text-sm">
               Mon/Wed/Fri 6PM
             </div>
           </div>
         </div>
         
         {/* Class highlights */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           <button 
             onClick={handleEnergyBoostInquiry}
-            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+            className="bg-white/10 rounded-lg p-5 sm:p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer tap-highlight touch-target"
           >
-            <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
-              <i className="fas fa-bolt text-yellow-400"></i>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+              <i className="fas fa-bolt text-yellow-400 text-sm sm:text-base"></i>
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Boost Energy</h3>
-            <p className="text-gray-100">Elevate your mood and increase energy levels with our dynamic dance workouts.</p>
-            <div className="mt-4 inline-flex items-center text-yellow-400">
-              <span className="text-sm">Contact on WhatsApp</span>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Boost Energy</h3>
+            <p className="text-gray-100 text-sm sm:text-base">Elevate your mood and increase energy levels with our dynamic dance workouts.</p>
+            <div className="mt-3 sm:mt-4 inline-flex items-center text-yellow-400">
+              <span className="text-xs sm:text-sm">Contact on WhatsApp</span>
               <i className="fab fa-whatsapp ml-2"></i>
             </div>
           </button>
           
           <button 
             onClick={handleWeightManagementInquiry}
-            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+            className="bg-white/10 rounded-lg p-5 sm:p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer tap-highlight touch-target"
           >
-            <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
-              <i className="fas fa-weight text-yellow-400"></i>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+              <i className="fas fa-weight text-yellow-400 text-sm sm:text-base"></i>
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Weight Management</h3>
-            <p className="text-gray-100">Burn up to 600 calories per class while enjoying the vibrant atmosphere.</p>
-            <div className="mt-4 inline-flex items-center text-yellow-400">
-              <span className="text-sm">Contact on WhatsApp</span>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Weight Management</h3>
+            <p className="text-gray-100 text-sm sm:text-base">Burn up to 600 calories per class while enjoying the vibrant atmosphere.</p>
+            <div className="mt-3 sm:mt-4 inline-flex items-center text-yellow-400">
+              <span className="text-xs sm:text-sm">Contact on WhatsApp</span>
               <i className="fab fa-whatsapp ml-2"></i>
             </div>
           </button>
           
           <button 
             onClick={handleStressReliefInquiry}
-            className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer"
+            className="bg-white/10 rounded-lg p-5 sm:p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer tap-highlight touch-target"
           >
-            <div className="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
-              <i className="fas fa-smile-beam text-yellow-400"></i>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+              <i className="fas fa-smile-beam text-yellow-400 text-sm sm:text-base"></i>
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Stress Relief</h3>
-            <p className="text-gray-100">Relieve stress, improve coordination, and boost your confidence through dance.</p>
-            <div className="mt-4 inline-flex items-center text-yellow-400">
-              <span className="text-sm">Contact on WhatsApp</span>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Stress Relief</h3>
+            <p className="text-gray-100 text-sm sm:text-base">Relieve stress, improve coordination, and boost your confidence through dance.</p>
+            <div className="mt-3 sm:mt-4 inline-flex items-center text-yellow-400">
+              <span className="text-xs sm:text-sm">Contact on WhatsApp</span>
               <i className="fab fa-whatsapp ml-2"></i>
             </div>
           </button>
