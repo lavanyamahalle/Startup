@@ -1,3 +1,6 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import clinicImg from './clinic.jpg';  // Assuming this file is in the same folder
+
 export default function AboutSection() {
   return (
     <section id="about" className="py-16 bg-white">
@@ -7,17 +10,12 @@ export default function AboutSection() {
           <div className="w-20 h-1 bg-[#D2B48C] mx-auto mb-8"></div>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#D2B48C]/40 rounded-full z-0"></div>
               <div className="relative z-10 rounded-lg overflow-hidden shadow-lg">
-                <div className="bg-gray-200 h-80 w-full flex items-center justify-center">
-                  <span className="text-gray-500">
-                    <i className="fas fa-clinic-medical text-6xl"></i>
-                    <p className="text-center mt-4">Wellness Clinic Photo</p>
-                  </span>
-                </div>
+              <img src={clinicImg} alt="Clinic" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -41,21 +39,24 @@ export default function AboutSection() {
                 </li>
                 <li className="flex items-start">
                   <i className="fas fa-map-marker-alt text-primary mr-3 mt-1"></i>
-                  <span>AP Pinnacle, Lonikand, Pune</span>
+                  <span> Pune, Maharashtra</span>
                 </li>
               </ul>
             </div>
             
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="Facebook">
+              <a href="https://facebook.com" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="Facebook">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="Instagram">
+              <a href="https://instagram.com" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="Instagram">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="LinkedIn">
+              <a href="https://linkedin.com" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="LinkedIn">
                 <i className="fab fa-linkedin-in"></i>
               </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-[#D2B48C] transition" aria-label="YouTube">
+                  <i className="fab fa-youtube text-lg"></i>
+                </a>
             </div>
           </div>
         </div>

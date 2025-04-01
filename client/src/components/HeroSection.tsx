@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useEffect, useState, useRef } from "react";
-
+import sakImg from './sak.jpg';
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -168,8 +168,8 @@ export default function HeroSection() {
               <div className="hidden sm:block h-1 w-20 bg-primary rounded-full mr-4"></div>
               <h2 className="typewriter text-lg sm:text-xl md:text-2xl text-gray-700 overflow-hidden">
                 <span className="font-medium">Dt. Sakshi Mahalle</span>
-                <span className="hidden sm:inline"> — Nutritionist & Fitness Expert</span>
-                <span className="block sm:hidden text-sm mt-1">Nutritionist & Fitness Expert</span>
+                <span className="hidden sm:inline"> — Dietitian & Fitness Expert</span>
+                <span className="block sm:hidden text-sm mt-1">Dietitian & Fitness Expert</span>
               </h2>
             </div>
             
@@ -303,22 +303,29 @@ export default function HeroSection() {
                 
                 {/* Image Placeholder - Replace with actual image when available */}
                 <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
-                  <div className="text-center p-6 sm:p-8">
-                    <div className="h-20 w-20 sm:h-24 sm:w-24 mx-auto mb-4 sm:mb-6 bg-primary/10 rounded-full flex items-center justify-center">
-                      <i className="fas fa-user-md text-primary text-3xl sm:text-4xl"></i>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">Dt. Sakshi Mahalle</h3>
-                    <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">MSc in Nutritional Studies and Dietetics</p>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      <span className="bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-                        Weight Management
-                      </span>
-                      <span className="bg-[#D2B48C]/20 text-[#8B4513] px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-                        Clinical Nutrition
-                      </span>
-                    </div>
-                  </div>
-                </div>
+  <div className="text-center p-6 sm:p-8">
+    {/* Profile Picture */}
+    <div className="h-62 w-62 sm:h-52 sm:w-52 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+  <img src={sakImg} alt="Dt. Sakshi Mahalle" className="w-full h-full object-cover" />
+</div>
+
+
+    {/* Name & Qualification */}
+    <h3 className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">Dt. Sakshi Mahalle</h3>
+    <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">MSc in Nutritional Sciences and Dietetics</p>
+
+    {/* Expertise Tags */}
+    <div className="flex flex-wrap justify-center gap-2">
+      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs sm:text-sm">
+        Weight Management
+      </span>
+      <span className="bg-[#D2B48C]/20 text-[#8B4513] px-3 py-1 rounded-full text-xs sm:text-sm">
+        Clinical Nutrition
+      </span>
+    </div>
+  </div>
+</div>
+
               </div>
             </div>
           </div>

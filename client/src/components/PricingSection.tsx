@@ -4,7 +4,7 @@ export default function PricingSection() {
   const plans = [
     {
       title: "1 Month Plan",
-      price: "₹2000",
+      price: "₹1999",
       savings: "",
       popular: false,
       features: [

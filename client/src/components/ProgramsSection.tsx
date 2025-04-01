@@ -1,40 +1,49 @@
-import ProgramCard from "@/components/ProgramCard";
+// src/components/ProgramsSection.tsx
+import ProgramCard from "./ProgramCard";
 import { Link } from "wouter";
+import weightLossImg from "./images/wloss.jpg";
+import weightGainImg from "./images/wgain.jpg";
+import therapeuticDietsImg from "./images/the.jpg";
+import pregnancyDietsImg from "./images/preg.jpg";
+import childNutritionImg from "./images/child.jpg";
+import fitnessDietsImg from "./images/fit.jpg";
 
-export default function ProgramsSection() {
-  const programs = [
-    {
-      title: "Weight Loss & Obesity Management",
-      icon: "fas fa-weight",
-      description: "Customized weight loss plans focusing on sustainable habits, not crash diets. Achieve healthy weight loss while maintaining energy levels."
-    },
-    {
-      title: "Weight Gain",
-      icon: "fas fa-apple-alt",
-      description: "Healthy weight gain programs designed to build muscle mass and increase body weight in a balanced, nutrient-rich way."
-    },
-    {
-      title: "Therapeutic Diets",
-      icon: "fas fa-heartbeat",
-      description: "Specialized nutrition plans for managing health conditions like Diabetes, Thyroid disorders, IBS, and PCOS."
-    },
-    {
-      title: "Pregnancy & Post-Pregnancy Diets",
-      icon: "fas fa-baby",
-      description: "Nutritional support for expectant and new mothers, focusing on maternal and infant health through optimal nutrition."
-    },
-    {
-      title: "Child Nutrition",
-      icon: "fas fa-child",
-      description: "Age-appropriate nutrition plans for children to support healthy growth, development, and establishing good eating habits."
-    },
-    {
-      title: "Fitness & Gym Diets",
-      icon: "fas fa-dumbbell",
-      description: "Performance-focused nutrition plans for athletes and fitness enthusiasts to maximize workout results and recovery."
-    }
+
+  export default function ProgramsSection() {
+    const programs = [
+      {
+        title: "Weight Loss & Obesity Management",
+        icon: weightLossImg, // Pass image as a prop
+        description: "Customized weight loss plans focusing on sustainable habits, not crash diets. Achieve healthy weight loss while maintaining energy levels."
+      },
+      {
+        title: "Weight Gain",
+        icon: weightGainImg, // Pass image as a prop
+        description: "Healthy weight gain programs designed to build muscle mass and increase body weight in a balanced, nutrient-rich way."
+      },
+      {
+        title: "Therapeutic Diets",
+        icon: therapeuticDietsImg, // Pass image as a prop
+        description: "Specialized nutrition plans for managing health conditions like Diabetes, Thyroid disorders, IBS, and PCOS."
+      },
+      {
+        title: "Pregnancy & Post-Pregnancy Diets",
+        icon: pregnancyDietsImg, // Pass image as a prop
+        description: "Nutritional support for expectant and new mothers, focusing on maternal and infant health through optimal nutrition."
+      },
+      {
+        title: "Child Nutrition",
+        icon: childNutritionImg, // Pass image as a prop
+        description: "Age-appropriate nutrition plans for children to support healthy growth, development, and establishing good eating habits."
+      },
+      {
+        title: "Fitness & Gym Diets",
+        icon: fitnessDietsImg, // Pass image as a prop
+        description: "Performance-focused nutrition plans for athletes and fitness enthusiasts to maximize workout results and recovery."
+      }
+    
   ];
-
+  
   return (
     <section id="programs" className="py-16 bg-white">
       <div className="container mx-auto px-4">

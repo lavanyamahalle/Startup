@@ -204,7 +204,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white/70 text-xs">Location</p>
-                  <span>AP Pinnacle, Lonikand, Pune</span>
+                  <span> Pune, Maharashtra</span>
                 </div>
               </li>
               <li className="flex items-start group">
@@ -213,7 +213,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white/70 text-xs">Working Hours</p>
-                  <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                  <span>Mon - Sat: 10:00 AM - 7:00 PM</span>
                 </div>
               </li>
             </ul>

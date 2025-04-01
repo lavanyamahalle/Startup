@@ -73,7 +73,7 @@ export default function ContactSection() {
     <section id="contact" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Contact Us</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Online Consultation</h2>
           <div className="w-20 h-1 bg-[#D2B48C] mx-auto mb-8"></div>
           <p className="text-lg max-w-3xl mx-auto">Have questions or ready to start your wellness journey? Get in touch with us.</p>
         </div>
@@ -244,8 +244,8 @@ export default function ContactSection() {
                 <li className="flex items-start">
                   <i className="fas fa-map-marker-alt text-primary text-lg mt-1 mr-4"></i>
                   <div>
-                    <p className="font-medium">Location</p>
-                    <p>AP Pinnacle, Lonikand, Pune</p>
+                    <p className="font-medium">Other branch</p>
+                    <p>Karanja Lad , Maharashtra</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -278,10 +278,17 @@ export default function ContactSection() {
             
             <div>
               <h3 className="text-2xl font-bold text-primary mb-4">Location</h3>
-              <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+              <div className="bg-gray-200 h-100 w-100 rounded-lg flex items-center justify-center">
                 <span className="text-gray-500">
-                  <i className="fas fa-map-marked-alt text-4xl"></i>
-                  <p className="text-center mt-4">Google Map Embed</p>
+                <iframe
+                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14951.17599641862!2d77.46090148692221!3d20.473652467197358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd137379f04cbe9%3A0xd8d6ed0b1a9e8906!2sPrashant%20Nagar%2C%20Karanja%2C%20Maharashtra%20444105!5e0!3m2!1sen!2sin!4v1743539985309!5m2!1sen!2sin" 
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
                 </span>
               </div>
             </div>

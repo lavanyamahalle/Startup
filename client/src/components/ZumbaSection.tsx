@@ -1,4 +1,18 @@
+
+import React, { useRef } from 'react';
+import videoFile from './zumbavideo.mp4';  // Adjust the path accordingly
+  // Adjust path accordingly
 export default function ZumbaSection() {
+
+  //videos
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const handleVideoEnd = () => {
+    if (videoRef.current) {  // Check if videoRef is not null
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  };
   // WhatsApp message functions
   const handleZumbaClassInquiry = () => {
     const message = encodeURIComponent(
@@ -28,6 +42,7 @@ export default function ZumbaSection() {
     window.open(`https://wa.me/7264072630?text=${message}`, "_blank");
   };
 
+ 
   return (
     <section id="zumba" className="relative py-20 overflow-hidden">
       {/* Decorative elements */}
@@ -103,72 +118,33 @@ export default function ZumbaSection() {
               </button>
             </div>
           </div>
+    <section id="video" className="py-65 ">
+      <div className="container mx-auto px-30 ">
+       
 
-          <div className="md:w-5/12 relative mt-8 md:mt-0">
-            {/* Decorative dance silhouettes - hidden on small mobile */}
-            <div className="hidden sm:block absolute -left-10 sm:-left-16 -top-10 w-16 sm:w-24 h-24 sm:h-36 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci11c2VyIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iNyIgcj0iNCI+PC9jaXJjbGU+PC9zdmc+')] bg-no-repeat opacity-25 animate-bounce-slow"></div>
-
-            <div className="relative">
-              <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/20">
-                <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full animate-pulse flex items-center justify-center mb-3 sm:mb-5">
-                    <i className="fas fa-play text-white text-lg sm:text-xl"></i>
-                  </div>
-                  
-                  <h3 className="text-white font-bold text-lg sm:text-xl mb-1 sm:mb-2 text-center">Zumba Class</h3>
-                  <p className="text-gray-200 text-xs sm:text-sm mb-4 sm:mb-5 text-center">Feel the energy and join us!</p>
-                  
-                  <button
-                    onClick={handleZumbaClassInquiry}
-                    className="bg-white hover:bg-gray-100 text-pink-500 font-medium py-2 px-4 sm:px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 flex items-center text-xs sm:text-sm touch-target tap-highlight"
-                  >
-                    <i className="fab fa-whatsapp mr-2 text-green-600"></i>
-                    <span>Request Schedule</span>
-                  </button>
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent"></div>
-              </div>
-
-              {/* Dancing figures decoration - hidden on small mobile */}
-              <div className="hidden sm:block absolute -bottom-8 sm:-bottom-10 -right-8 sm:-right-10 w-24 sm:w-32 h-24 sm:h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1tdXNpYyI+PHBhdGggZD0iTTkgMThWNWwxMi0ydjEzIj48L3BhdGg+PGNpcmNsZSBjeD0iNiIgY3k9IjE4IiByPSIzIj48L2NpcmNsZT48Y2lyY2xlIGN4PSIxOCIgY3k9IjE2IiByPSIzIj48L2NpcmNsZT48L3N2Zz4=')] bg-no-repeat opacity-40 animate-spin-slow"></div>
-            </div>
-
-            {/* Class schedule badge - responsive sizing */}
-          </div>
+        <div className="relative" >
+          <video
+            ref={videoRef}
+            src={videoFile}
+            className="w-full h-auto"
+            autoPlay
+            loop={false}  // Set loop to false for manual restart
+            onEnded={handleVideoEnd}  // Trigger on video end to restart
+          />
         </div>
-
-        {/* Video Section - Mobile Friendly */}
-        <div className="mt-10 pb-4 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg">
-          <h3 className="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-center py-3 px-4 font-bold text-lg sm:text-xl mb-4">
-            Experience the Energy of Zumba
-          </h3>
+      </div>
+    </section>
           
-          <div className="px-4 pb-4">
-            <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-inner">
-              <iframe 
-                className="absolute top-0 left-0 w-full h-full" 
-                src="https://www.youtube.com/embed/QRZcZgSgSHI" 
-                title="Zumba Dance Workout" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen>
-              </iframe>
-            </div>
-            
-            <div className="mt-4 text-center">
-              <button 
-                onClick={handleZumbaClassInquiry}
-                className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-2 px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 text-sm touch-target tap-highlight"
-              >
-                <i className="fab fa-whatsapp mr-2"></i>
-                Join Our Classes Now
-              </button>
-            </div>
-          </div>
         </div>
 
+
+
+        <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Our Vision</h2>
+        </div>
         {/* Class highlights */}
         <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          
           <button
             onClick={handleEnergyBoostInquiry}
             className="bg-white/10 rounded-lg p-5 sm:p-6 backdrop-blur-sm border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/20 text-left cursor-pointer tap-highlight touch-target"

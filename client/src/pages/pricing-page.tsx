@@ -36,7 +36,8 @@ export default function PricingPage() {
             
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <div className="w-16 h-16 bg-[#D2B48C]/30 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <i className="fas fa-yoga text-primary text-2xl"></i>
+              <i className="fas fa-dumbbell text-primary text-2xl"></i>
+
               </div>
               <h3 className="text-xl font-bold text-primary text-center mb-3">Fitness Sessions</h3>
               <p className="text-center">Access to Zumba and Yoga sessions (5 days a week) to complement your nutrition program.</p>

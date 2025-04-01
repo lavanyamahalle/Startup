@@ -1,29 +1,34 @@
 import ProgramsSection from "@/components/ProgramsSection";
 import ProgramCard from "@/components/ProgramCard";
-
+import skinHairCareImg from "./imagess/skin-hair-care.jpg";
+import seniorNutritionImg from "./imagess/senior-nutrition.jpg";
+import sportsNutritionImg from "./imagess/sports-nutrition.jpg";
+import corporateWellnessImg from "./imagess/corporate-wellness.jpg";
+import approach from "./imagess/approach.jpg"
 export default function ProgramsPage() {
   const extraPrograms = [
     {
       title: "Skin & Hair Care",
-      icon: "fas fa-spa",
+      icon: skinHairCareImg,  // Updated to image
       description: "Nutritional approach to improving skin health and hair quality through targeted diet modifications and supplements recommendations."
     },
     {
       title: "Senior Nutrition",
-      icon: "fas fa-user-friends",
+      icon: seniorNutritionImg,  // Updated to image
       description: "Specialized nutrition plans for older adults focusing on maintaining muscle mass, bone density, and supporting overall health."
     },
     {
       title: "Sports Nutrition",
-      icon: "fas fa-running",
+      icon: sportsNutritionImg,  // Updated to image
       description: "Performance-focused nutrition for athletes looking to optimize energy levels, recovery, and overall athletic performance."
     },
     {
       title: "Corporate Wellness",
-      icon: "fas fa-building",
+      icon: corporateWellnessImg,  // Updated to image
       description: "Wellness programs for organizations aimed at improving employee health, reducing sick days, and boosting productivity."
     }
   ];
+  
 
   return (
     <div className="pt-8">
@@ -86,10 +91,9 @@ export default function ProgramsPage() {
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full z-0"></div>
                 <div className="relative z-10 bg-gray-200 rounded-lg overflow-hidden h-96 w-full">
                   <div className="h-full w-full flex items-center justify-center">
-                    <span className="text-gray-500">
-                      <i className="fas fa-seedling text-6xl"></i>
-                      <p className="text-center mt-4">Wellness Approach Illustration</p>
-                    </span>
+                  <div className="relative z-10 rounded-lg overflow-hidden shadow-lg">
+              <img src={approach} alt="Clinic" className="w-full h-full object-cover" />
+              </div>
                   </div>
                 </div>
               </div>

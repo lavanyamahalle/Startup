@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import Logo from "@/components/ui/logo";
+//import Logo from "@/components/ui/logo";
 import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
+import logoImg from './logo.jpg';  // Adjust path accordingly
+
+
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -136,7 +139,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span className="text-sm">AP Pinnacle, Lonikand, Pune</span>
+              <span className="text-sm">Pune, Maharashtra</span>
             </div>
           </div>
           
@@ -180,10 +183,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center logo-anim">
               <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-primary rounded-full opacity-30 group-hover:opacity-100 blur transition duration-300"></div>
-                <div className="relative h-14 w-14 bg-white rounded-full flex items-center justify-center">
-                  <Logo className="h-10 w-10" />
-                </div>
+              <div className="relative h-14 w-14 bg-white rounded-full flex items-center justify-center">
+  <img src={logoImg} alt="Logo" className="h-14 w-13 object-cover" />
+</div>
               </div>
               <div className="ml-3 flex flex-col">
                 <span className="font-heading font-bold text-xl text-primary hidden md:block">Sustenance Wellness</span>

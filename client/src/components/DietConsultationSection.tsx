@@ -1,3 +1,4 @@
+import diet from './diet.jpg'; 
 export default function DietConsultationSection() {
   // WhatsApp message functions
   const handleGeneralConsult = () => {
@@ -110,33 +111,10 @@ export default function DietConsultationSection() {
 
             <div className="relative">
               <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/20">
-                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-4 sm:space-y-6">
-                  <div className="relative w-24 h-24 sm:w-32 sm:h-32">
-                    <div className="absolute inset-0 rounded-full bg-[#D2B48C]/50 animate-pulse-slow"></div>
-                    <div className="absolute inset-3 rounded-full bg-[#D2B48C]/70 animate-pulse-medium"></div>
-                    <div className="absolute inset-6 rounded-full bg-[#D2B48C] animate-pulse-fast flex items-center justify-center">
-                      <i className="fas fa-apple-alt text-white text-xl sm:text-2xl"></i>
-                    </div>
-                  </div>
-
-                  <div className="text-center px-4">
-                    <p className="text-white font-bold text-lg sm:text-xl">
-                      Book Your Consultation
-                    </p>
-                    <p className="text-gray-200 text-sm sm:text-base">
-                      First step to a healthier you
-                    </p>
-                  </div>
-
-                  <button
-                    onClick={handleGeneralConsult}
-                    className="mt-2 sm:mt-4 bg-white hover:bg-gray-100 text-primary font-medium py-2 px-4 sm:px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center text-sm sm:text-base touch-target tap-highlight"
-                  >
-                    <i className="fab fa-whatsapp mr-2 text-green-600"></i>
-                    <span>Book Now</span>
-                  </button>
-                </div>
-
+  {/* i changed */}
+  <div className="relative z-60 rounded-lg overflow-hidden shadow-lg">
+              <img src={diet} alt="Clinic" className="w-200 h-200" />
+              </div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent"></div>
               </div>
 
@@ -147,88 +125,6 @@ export default function DietConsultationSection() {
             {/* Consultation badge - responsive sizing */}
             <div className="absolute -left-6 sm:-left-10 top-3 sm:top-10 transform -rotate-12 bg-[#D2B48C] text-black font-bold py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg shadow-lg text-xs sm:text-sm">
               Online & In-person
-            </div>
-          </div>
-        </div>
-
-        {/* Photo Gallery Section - Mobile Friendly */}
-        <div className="mt-10 pb-4 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg">
-          <h3 className="bg-gradient-to-r from-primary/90 to-[#8B4513]/80 text-white text-center py-3 px-4 font-bold text-lg sm:text-xl mb-4">
-            Healthy Meal Inspirations
-          </h3>
-          
-          <div className="px-4 pb-4">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-              {/* Healthy Meal Photos */}
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                <div className="absolute inset-0 bg-[#8B4513]/20"></div>
-                <div className="w-full h-full bg-[#D2B48C]/30 flex items-center justify-center">
-                  <i className="fas fa-carrot text-[#D2B48C] text-4xl"></i>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black/50 py-1 px-2">
-                  <p className="text-white text-xs text-center">Vegetable Platter</p>
-                </div>
-              </div>
-              
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                <div className="absolute inset-0 bg-[#8B4513]/20"></div>
-                <div className="w-full h-full bg-[#D2B48C]/30 flex items-center justify-center">
-                  <i className="fas fa-seedling text-[#D2B48C] text-4xl"></i>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black/50 py-1 px-2">
-                  <p className="text-white text-xs text-center">Green Salad</p>
-                </div>
-              </div>
-              
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                <div className="absolute inset-0 bg-[#8B4513]/20"></div>
-                <div className="w-full h-full bg-[#D2B48C]/30 flex items-center justify-center">
-                  <i className="fas fa-fish text-[#D2B48C] text-4xl"></i>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black/50 py-1 px-2">
-                  <p className="text-white text-xs text-center">Protein Rich</p>
-                </div>
-              </div>
-              
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                <div className="absolute inset-0 bg-[#8B4513]/20"></div>
-                <div className="w-full h-full bg-[#D2B48C]/30 flex items-center justify-center">
-                  <i className="fas fa-apple-alt text-[#D2B48C] text-4xl"></i>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black/50 py-1 px-2">
-                  <p className="text-white text-xs text-center">Fresh Fruits</p>
-                </div>
-              </div>
-              
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                <div className="absolute inset-0 bg-[#8B4513]/20"></div>
-                <div className="w-full h-full bg-[#D2B48C]/30 flex items-center justify-center">
-                  <i className="fas fa-bread-slice text-[#D2B48C] text-4xl"></i>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black/50 py-1 px-2">
-                  <p className="text-white text-xs text-center">Whole Grains</p>
-                </div>
-              </div>
-              
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-md">
-                <div className="absolute inset-0 bg-[#8B4513]/20"></div>
-                <div className="w-full h-full bg-[#D2B48C]/30 flex items-center justify-center">
-                  <i className="fas fa-glass-whiskey text-[#D2B48C] text-4xl"></i>
-                </div>
-                <div className="absolute bottom-0 w-full bg-black/50 py-1 px-2">
-                  <p className="text-white text-xs text-center">Healthy Smoothies</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <button 
-                onClick={handleGeneralConsult}
-                className="inline-flex items-center justify-center bg-[#D2B48C] hover:bg-[#C0A080] text-black font-medium py-2 px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 text-sm touch-target tap-highlight"
-              >
-                <i className="fab fa-whatsapp mr-2"></i>
-                Get Your Custom Meal Plan
-              </button>
             </div>
           </div>
         </div>
