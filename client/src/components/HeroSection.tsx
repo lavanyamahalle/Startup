@@ -159,19 +159,21 @@ export default function HeroSection() {
               Welcome to Sustenance Wellness
             </div>
             
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Transform Your Health{" "}
-              <span className="text-gradient font-bold">Naturally</span>
+              <span className="text-gradient font-bold block sm:inline">Naturally</span>
             </h1>
             
-            <div className="flex items-center mb-8">
-              <div className="h-1 w-20 bg-primary rounded-full mr-4"></div>
-              <h2 className="typewriter text-xl md:text-2xl text-gray-700 overflow-hidden whitespace-nowrap">
-                <span className="font-medium">Dt. Sakshi Mahalle</span> — Nutritionist & Fitness Expert
+            <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+              <div className="hidden sm:block h-1 w-20 bg-primary rounded-full mr-4"></div>
+              <h2 className="typewriter text-lg sm:text-xl md:text-2xl text-gray-700 overflow-hidden">
+                <span className="font-medium">Dt. Sakshi Mahalle</span>
+                <span className="hidden sm:inline"> — Nutritionist & Fitness Expert</span>
+                <span className="block sm:hidden text-sm mt-1">Nutritionist & Fitness Expert</span>
               </h2>
             </div>
             
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
               {[
                 { text: "Clinical Nutritionist", icon: "fa-heartbeat" },
                 { text: "Gut Health Expert", icon: "fa-seedling" },
@@ -182,13 +184,13 @@ export default function HeroSection() {
               ].map((tag, index) => (
                 <span 
                   key={index}
-                  className={`bg-white shadow-md text-primary px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform 
+                  className={`bg-white shadow-md text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 transform 
                     opacity-0 ${isVisible ? 'opacity-100' : ''}
-                    hover:scale-105 hover:shadow-lg hover:bg-primary hover:text-white flex items-center`}
+                    hover:scale-105 hover:shadow-lg hover:bg-primary hover:text-white active:bg-primary active:text-white flex items-center touch-target tap-highlight`}
                   style={{ transitionDelay: `${index * 100 + 300}ms` }}
                 >
-                  <i className={`fas ${tag.icon} mr-2`}></i>
-                  {tag.text}
+                  <i className={`fas ${tag.icon} mr-1.5 sm:mr-2`}></i>
+                  <span className="sm:inline">{tag.text}</span>
                 </span>
               ))}
             </div>
@@ -218,7 +220,7 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <p className={`text-lg mb-8 border-l-4 border-primary pl-4 py-2 bg-primary/5 rounded-r-lg
+            <p className={`text-sm sm:text-lg mb-6 sm:mb-8 border-l-4 border-primary pl-3 sm:pl-4 py-1.5 sm:py-2 bg-primary/5 rounded-r-lg
               transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
               style={{ transitionDelay: '800ms' }}
             >
@@ -235,7 +237,7 @@ export default function HeroSection() {
                 href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20a%20personalized%20diet%20consultation.%20Can%20you%20help%20me%20with%20that%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary text-white px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center justify-center"
+                className="bg-primary text-white px-4 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/90 flex items-center justify-center touch-target tap-highlight"
               >
                 <i className="fas fa-utensils mr-2"></i>
                 Diet Consultation
@@ -245,7 +247,7 @@ export default function HeroSection() {
                 href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20joining%20your%20Zumba%20classes.%20Could%20you%20provide%20more%20details%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-primary border-2 border-primary px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center justify-center"
+                className="bg-white text-primary border-2 border-primary px-4 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary/5 flex items-center justify-center touch-target tap-highlight"
               >
                 <i className="fas fa-music mr-2"></i>
                 Zumba Classes
@@ -255,7 +257,7 @@ export default function HeroSection() {
                 href="https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27d%20like%20to%20know%20more%20about%20your%20services%20and%20pricing.%20Can%20you%20help%3F" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-5 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-green-600 flex items-center justify-center"
+                className="bg-green-500 text-white px-4 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:bg-green-600 flex items-center justify-center touch-target tap-highlight"
               >
                 <i className="fab fa-whatsapp mr-2"></i>
                 Ask on WhatsApp
@@ -269,27 +271,28 @@ export default function HeroSection() {
           }`} style={{ transitionDelay: "400ms" }}>
             <div className="relative">
               {/* Decorative Elements */}
-              <div className="absolute -top-12 -left-12 w-36 h-36 bg-[#D2B48C]/30 rounded-full blur-xl floating-delay-1 z-0"></div>
-              <div className="absolute -bottom-10 -right-10 w-28 h-28 bg-primary/20 rounded-full blur-lg floating-delay-2 z-0"></div>
+              <div className="absolute -top-12 -left-12 w-24 sm:w-36 h-24 sm:h-36 bg-[#D2B48C]/30 rounded-full blur-xl floating-delay-1 z-0"></div>
+              <div className="absolute -bottom-10 -right-10 w-20 sm:w-28 h-20 sm:h-28 bg-primary/20 rounded-full blur-lg floating-delay-2 z-0"></div>
               
-              <div className="absolute -top-6 left-0 transform -translate-x-1/2 bg-primary text-white px-4 py-2 rounded-lg shadow-lg z-20 floating">
+              {/* Badges - Hidden on very small mobile */}
+              <div className="hidden sm:block absolute -top-6 left-0 transform -translate-x-1/2 bg-primary text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-lg z-20 floating">
                 <div className="flex items-center">
                   <i className="fas fa-certificate mr-2"></i>
-                  <span>Certified Nutritionist</span>
+                  <span className="text-xs sm:text-sm">Certified Nutritionist</span>
                 </div>
               </div>
               
-              <div className="absolute top-1/4 -right-4 transform translate-x-1/2 bg-white text-primary px-4 py-2 rounded-lg shadow-lg z-20 floating-delay-1">
+              <div className="hidden sm:block absolute top-1/4 -right-4 transform translate-x-1/2 bg-white text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-lg z-20 floating-delay-1">
                 <div className="flex items-center">
                   <i className="fas fa-star mr-2"></i>
-                  <span>5-star rated</span>
+                  <span className="text-xs sm:text-sm">5-star rated</span>
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 left-1/4 transform -translate-x-1/2 bg-[#D2B48C] text-white px-4 py-2 rounded-lg shadow-lg z-20 floating-delay-2">
+              <div className="hidden sm:block absolute -bottom-6 left-1/4 transform -translate-x-1/2 bg-[#D2B48C] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-lg z-20 floating-delay-2">
                 <div className="flex items-center">
                   <i className="fas fa-medal mr-2"></i>
-                  <span>Premium Service</span>
+                  <span className="text-xs sm:text-sm">Premium Service</span>
                 </div>
               </div>
               
@@ -299,18 +302,18 @@ export default function HeroSection() {
                 <div className="absolute inset-0 backdrop-blur-sm z-1"></div>
                 
                 {/* Image Placeholder - Replace with actual image when available */}
-                <div className="relative h-[350px] sm:h-[400px] md:h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
-                  <div className="text-center p-8">
-                    <div className="h-24 w-24 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
-                      <i className="fas fa-user-md text-primary text-4xl"></i>
+                <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
+                  <div className="text-center p-6 sm:p-8">
+                    <div className="h-20 w-20 sm:h-24 sm:w-24 mx-auto mb-4 sm:mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                      <i className="fas fa-user-md text-primary text-3xl sm:text-4xl"></i>
                     </div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Dt. Sakshi Mahalle</h3>
-                    <p className="text-gray-600 mb-4">MSc in Nutritional Studies and Dietetics</p>
-                    <div className="flex justify-center space-x-2">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                    <h3 className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">Dt. Sakshi Mahalle</h3>
+                    <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">MSc in Nutritional Studies and Dietetics</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      <span className="bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
                         Weight Management
                       </span>
-                      <span className="bg-[#D2B48C]/20 text-[#8B4513] px-3 py-1 rounded-full text-sm">
+                      <span className="bg-[#D2B48C]/20 text-[#8B4513] px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
                         Clinical Nutrition
                       </span>
                     </div>

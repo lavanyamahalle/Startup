@@ -15,10 +15,8 @@ export default function CallToAction() {
           >
             Book a Free Consultation
           </a>
-          <Link href="/programs">
-            <a className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-cta font-semibold py-3 px-8 rounded-lg shadow transition text-lg">
-              Explore Programs
-            </a>
+          <Link href="/programs" className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-cta font-semibold py-3 px-8 rounded-lg shadow transition text-lg">
+            Explore Programs
           </Link>
         </div>
       </div>
