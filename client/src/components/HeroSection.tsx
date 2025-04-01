@@ -305,7 +305,7 @@ export default function HeroSection() {
                 <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[480px] w-full bg-white/90 shimmer flex items-center justify-center z-10">
   <div className="text-center p-6 sm:p-8">
     {/* Profile Picture */}
-    <div className="h-62 w-62 sm:h-52 sm:w-52 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+    <div className="h-40 w-40 sm:h-15 sm:w-15 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg">
   <img src={sakImg} alt="Dt. Sakshi Mahalle" className="w-full h-full object-cover" />
 </div>
 
