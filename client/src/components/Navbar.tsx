@@ -232,7 +232,7 @@ export default function Navbar() {
             {/* Mobile Navigation Toggle */}
             <div className="flex items-center md:hidden">
               <button 
-                className="text-primary focus:outline-none p-2 rounded-full bg-primary/10"
+                className="text-primary focus:outline-none p-3 rounded-lg bg-primary/10 hover:bg-primary/15 active:bg-primary/20 transition-colors touch-target tap-highlight"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               >
@@ -248,126 +248,138 @@ export default function Navbar() {
             <div className="container mx-auto px-4 py-4 flex flex-col">
               <div className="space-y-1 mb-4">
                 <Link href="/" 
-                  className={`block px-4 py-3 rounded-lg ${location === "/" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300`}
+                  className={`block px-4 py-4 rounded-lg ${location === "/" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-home mr-3 w-5 text-center"></i>
-                    <span>Home</span>
+                    <i className="fas fa-home mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Home</span>
                   </div>
                 </Link>
                 
                 <Link href="/about" 
-                  className={`block px-4 py-3 rounded-lg ${location === "/about" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300`}
+                  className={`block px-4 py-4 rounded-lg ${location === "/about" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-user mr-3 w-5 text-center"></i>
-                    <span>About</span>
+                    <i className="fas fa-user mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">About</span>
                   </div>
                 </Link>
                 
                 <Link href="#zumba" 
-                  className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary/5 hover:text-primary transition-all duration-300"
+                  className="block px-4 py-4 rounded-lg text-gray-700 hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-music mr-3 w-5 text-center"></i>
-                    <span>Zumba</span>
+                    <i className="fas fa-music mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Zumba</span>
                   </div>
                 </Link>
                 
                 <Link href="#diet-consultation" 
-                  className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-primary/5 hover:text-primary transition-all duration-300"
+                  className="block px-4 py-4 rounded-lg text-gray-700 hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-utensils mr-3 w-5 text-center"></i>
-                    <span>Diet Plans</span>
+                    <i className="fas fa-utensils mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Diet Plans</span>
                   </div>
                 </Link>
                 
                 <Link href="/programs" 
-                  className={`block px-4 py-3 rounded-lg ${location === "/programs" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300`}
+                  className={`block px-4 py-4 rounded-lg ${location === "/programs" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-clipboard-list mr-3 w-5 text-center"></i>
-                    <span>Programs</span>
+                    <i className="fas fa-clipboard-list mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Programs</span>
                   </div>
                 </Link>
                 
                 <Link href="/pricing" 
-                  className={`block px-4 py-3 rounded-lg ${location === "/pricing" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300`}
+                  className={`block px-4 py-4 rounded-lg ${location === "/pricing" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-tags mr-3 w-5 text-center"></i>
-                    <span>Pricing</span>
+                    <i className="fas fa-tags mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Pricing</span>
                   </div>
                 </Link>
                 
                 <Link href="/testimonials" 
-                  className={`block px-4 py-3 rounded-lg ${location === "/testimonials" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300`}
+                  className={`block px-4 py-4 rounded-lg ${location === "/testimonials" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-star mr-3 w-5 text-center"></i>
-                    <span>Success Stories</span>
+                    <i className="fas fa-star mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Success Stories</span>
                   </div>
                 </Link>
                 
                 <Link href="/contact" 
-                  className={`block px-4 py-3 rounded-lg ${location === "/contact" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300`}
+                  className={`block px-4 py-4 rounded-lg ${location === "/contact" ? "bg-primary/10 text-primary" : "text-gray-700"} hover:bg-primary/5 hover:text-primary transition-all duration-300 touch-target tap-highlight`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="flex items-center">
-                    <i className="fas fa-envelope mr-3 w-5 text-center"></i>
-                    <span>Contact</span>
+                    <i className="fas fa-envelope mr-3 w-5 text-center text-lg"></i>
+                    <span className="text-base">Contact</span>
                   </div>
                 </Link>
               </div>
               
               {/* Social Media & Contact in Mobile Menu */}
-              <div className="border-t border-gray-100 pt-4">
+              <div className="border-t border-gray-100 pt-4 pb-2">
                 <p className="text-xs text-gray-500 mb-3 px-4">Connect with us</p>
-                <div className="flex space-x-2 px-4">
+                <div className="flex justify-between px-4">
                   <a 
                     href={socialLinks.whatsapp} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-all duration-300"
+                    className="bg-green-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 touch-target tap-highlight"
                     aria-label="WhatsApp"
                   >
-                    <i className="fab fa-whatsapp text-sm"></i>
+                    <i className="fab fa-whatsapp text-lg"></i>
                   </a>
                   
                   <a 
                     href={socialLinks.instagram} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-2 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:from-purple-600 hover:to-pink-600 transition-all duration-300 touch-target tap-highlight"
                     aria-label="Instagram"
                   >
-                    <i className="fab fa-instagram text-sm"></i>
+                    <i className="fab fa-instagram text-lg"></i>
                   </a>
                   
                   <a 
                     href={socialLinks.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-all duration-300"
+                    className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 touch-target tap-highlight"
                     aria-label="LinkedIn"
                   >
-                    <i className="fab fa-linkedin-in text-sm"></i>
+                    <i className="fab fa-linkedin-in text-lg"></i>
                   </a>
                   
                   <a 
                     href="tel:7264072630" 
-                    className="bg-primary text-white p-2 rounded-full hover:bg-primary/90 transition-all duration-300 ml-auto"
+                    className="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary/90 transition-all duration-300 touch-target tap-highlight"
                     aria-label="Call us"
                   >
-                    <i className="fas fa-phone-alt text-sm"></i>
+                    <i className="fas fa-phone-alt text-lg"></i>
+                  </a>
+                </div>
+                
+                <div className="mt-4 px-4">
+                  <a 
+                    href={socialLinks.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-primary text-white py-3 px-4 rounded-lg hover:bg-primary/90 transition duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-1 touch-target tap-highlight"
+                  >
+                    <i className="fab fa-whatsapp mr-2 text-lg"></i>
+                    <span className="font-medium">Book a Consultation</span>
                   </a>
                 </div>
               </div>

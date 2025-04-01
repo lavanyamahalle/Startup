@@ -476,4 +476,90 @@
   .opacity-0 {
     opacity: 0;
   }
+  
+  /* Mobile-specific responsive typography utilities */
+  .mobile-text-center {
+    @apply text-center sm:text-left;
+  }
+  
+  .mobile-text-left {
+    @apply text-left sm:text-center;
+  }
+  
+  /* Mobile-optimized spacing */
+  .mobile-px-4 {
+    @apply px-4 sm:px-0;
+  }
+  
+  .mobile-py-4 {
+    @apply py-4 sm:py-0;
+  }
+  
+  .mobile-p-4 {
+    @apply p-4 sm:p-0;
+  }
+  
+  .mobile-mt-4 {
+    @apply mt-4 sm:mt-0;
+  }
+  
+  .mobile-mb-4 {
+    @apply mb-4 sm:mb-0;
+  }
+  
+  /* Mobile touch target size improvements */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Improved tap area for mobile links */
+  .tap-highlight {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    @apply cursor-pointer;
+  }
+  
+  /* Mobile-specific layout utilities */
+  .stack-on-mobile {
+    @apply flex flex-col sm:flex-row;
+  }
+  
+  .stack-on-mobile-reverse {
+    @apply flex flex-col-reverse sm:flex-row;
+  }
+  
+  .grid-on-mobile {
+    @apply flex flex-col sm:grid;
+  }
+  
+  /* Hide/show based on screen size */
+  .mobile-only {
+    @apply block sm:hidden;
+  }
+  
+  .desktop-only {
+    @apply hidden sm:block;
+  }
+  
+  /* Mobile-optimized scrolling containers */
+  .scroll-container-x {
+    @apply overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary/20 scrollbar-thumb-rounded-full;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .scroll-item {
+    scroll-snap-align: start;
+  }
+  
+  /* Fix for iOS Safari 100vh issue */
+  .safe-screen-height {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+  
+  /* iOS momentum scrolling */
+  .momentum-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
 }

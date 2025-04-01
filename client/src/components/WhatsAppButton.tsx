@@ -49,6 +49,24 @@ export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [bounce, setBounce] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile device on component mount
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check initially
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   // Show button after scrolling down a bit
   useEffect(() => {
@@ -83,8 +101,23 @@ export default function WhatsAppButton() {
   }, [isVisible, bounce]);
 
   const handleWhatsAppClick = () => {
+    // Don't trigger WhatsApp on tooltip display for mobile
+    if (isMobile && isHovered) {
+      setIsHovered(false);
+      return;
+    }
+    
     // The WhatsApp number is from the user requirements
     window.open('https://wa.me/7264072630?text=Hi%20Sustenance%20Wellness!%20I%27m%20interested%20in%20your%20services.', '_blank');
+  };
+  
+  // For mobile, show tooltip on first click, open WhatsApp on second click
+  const handleTouchStart = () => {
+    if (isMobile && !isHovered) {
+      setIsHovered(true);
+      // Auto-hide tooltip after 3 seconds
+      setTimeout(() => setIsHovered(false), 3000);
+    }
   };
 
   // Add the animation styles to the document
@@ -101,19 +134,30 @@ export default function WhatsAppButton() {
   return (
     <button
       onClick={handleWhatsAppClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300 transform ${
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      onTouchStart={handleTouchStart}
+      className={`fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-green-500 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       } ${bounce ? 'bounce' : ''} ${isHovered ? 'scale-110' : 'scale-100'} pulse-ring`}
       aria-label="Contact on WhatsApp"
     >
       <div className="relative">
-        <i className="fab fa-whatsapp text-3xl"></i>
+        <i className="fab fa-whatsapp text-2xl sm:text-3xl"></i>
+        
+        {/* Desktop tooltip */}
         {isHovered && (
-          <div className="absolute left-full ml-4 top-1/2 transform -translate-y-1/2 bg-white text-green-600 rounded-lg shadow-lg py-2 px-4 whitespace-nowrap">
+          <div className="hidden sm:block absolute left-full ml-4 top-1/2 transform -translate-y-1/2 bg-white text-green-600 rounded-lg shadow-lg py-2 px-4 whitespace-nowrap">
             <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rotate-45"></div>
             <span className="font-semibold">Chat with us now!</span>
+          </div>
+        )}
+        
+        {/* Mobile tooltip - shows above the button */}
+        {isHovered && (
+          <div className="sm:hidden absolute bottom-full mb-3 left-1/2 transform -translate-x-1/2 bg-white text-green-600 rounded-lg shadow-lg py-2 px-4 whitespace-nowrap">
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-white rotate-45"></div>
+            <span className="font-semibold text-sm">Tap again to chat</span>
           </div>
         )}
       </div>
