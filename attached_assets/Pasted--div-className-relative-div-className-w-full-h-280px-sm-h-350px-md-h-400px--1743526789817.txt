@@ -1,0 +1,25 @@
+ <div className="relative">
+              <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] bg-gradient-to-b from-white/20 to-white/5 rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/20">
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-4 sm:space-y-6">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 bg-white/20 rounded-full animate-pulse flex items-center justify-center">
+                    <i className="fas fa-play text-white text-xl sm:text-2xl"></i>
+                  </div>
+                  <p className="text-white font-bold text-lg sm:text-xl">
+                    Zumba Class
+                  </p>
+                  <p className="text-gray-200">Feel the energy and join us!</p>
+                  <button
+                    onClick={handleZumbaClassInquiry}
+                    className="mt-2 sm:mt-4 bg-white hover:bg-gray-100 text-pink-500 font-medium py-2 px-4 sm:px-6 rounded-full shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center text-sm sm:text-base touch-target tap-highlight"
+                  >
+                    <i className="fab fa-whatsapp mr-2 text-green-600"></i>
+                    <span>Request Schedule</span>
+                  </button>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/70 to-transparent"></div>
+              </div>
+
+              {/* Dancing figures decoration - hidden on small mobile */}
+              <div className="hidden sm:block absolute -bottom-8 sm:-bottom-10 -right-8 sm:-right-10 w-24 sm:w-32 h-24 sm:h-32 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1tdXNpYyI+PHBhdGggZD0iTTkgMThWNWwxMi0ydjEzIj48L3BhdGg+PGNpcmNsZSBjeD0iNiIgY3k9IjE4IiByPSIzIj48L2NpcmNsZT48Y2lyY2xlIGN4PSIxOCIgY3k9IjE2IiByPSIzIj48L2NpcmNsZT48L3N2Zz4=')] bg-no-repeat opacity-40 animate-spin-slow"></div>
+            </div>
