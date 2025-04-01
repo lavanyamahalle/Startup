@@ -62,6 +62,7 @@
     "nanoid": "^5.1.5",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
+    "pg": "^8.14.1",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
@@ -92,7 +93,11 @@
     "@types/ws": "^8.5.13",
     "@vitejs/plugin-react": "^4.3.2",
     "autoprefixer": "^10.4.20",
+<<<<<<< HEAD
     "drizzle-kit": "^0.18.1",
+=======
+    "drizzle-kit": "^0.30.6",
+>>>>>>> a6234c651012f4e4f313daadbb91da5a93f0db6e
     "esbuild": "^0.25.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
