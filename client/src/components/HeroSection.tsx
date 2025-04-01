@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { useEffect, useState, useRef } from "react";
 import sakImg from './sak.jpg';
+import logo from './logo.jpg';
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -172,8 +173,8 @@ export default function HeroSection() {
                 <span className="block sm:hidden text-sm mt-1">Dietitian & Fitness Expert</span>
               </h2>
             </div>
-            
-            <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+
+            {/* <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
               {[
                 { text: "Clinical Nutritionist", icon: "fa-heartbeat" },
                 { text: "Gut Health Expert", icon: "fa-seedling" },
@@ -193,9 +194,14 @@ export default function HeroSection() {
                   <span className="sm:inline">{tag.text}</span>
                 </span>
               ))}
-            </div>
-            
-            <div ref={statsRef} className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+            </div> */}
+            <div className="w-full h-full sm:w-80 sm:h-80 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+  <img src={logo} alt="Dt. Sakshi Mahalle" className="w-full h-full object-cover" />
+</div>
+
+
+
+            {/* <div ref={statsRef} className="grid grid-cols- sm:grid-cols-3 gap-0 mb-30">
               {[
                 { count: 5000, text: "Happy Clients", icon: "fa-smile" },
                 { count: 8, text: "Years Experience", icon: "fa-calendar-alt" },
@@ -218,7 +224,7 @@ export default function HeroSection() {
                   <p className="text-gray-600 text-center text-xs sm:text-sm">{stat.text}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
             
             <p className={`text-sm sm:text-lg mb-6 sm:mb-8 border-l-4 border-primary pl-3 sm:pl-4 py-1.5 sm:py-2 bg-primary/5 rounded-r-lg
               transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
@@ -307,7 +313,7 @@ export default function HeroSection() {
     {/* Profile Picture */}
     <div className="h-40 w-40 sm:h-15 sm:w-15 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg">
   <img src={sakImg} alt="Dt. Sakshi Mahalle" className="w-full h-full object-cover" />
-</div>
+  </div>
 
 
     {/* Name & Qualification */}
